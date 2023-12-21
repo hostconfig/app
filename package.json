@@ -18,7 +18,7 @@
     "start": "node ./bin/www",
 
     "build": "tsc -p ./tsconfig.json && tsc-alias && ts-add-js-extension --dir=dist",
-    "postbuild": "yarn copy:views && yarn copy:public && yarn copy:static",
+    "postbuild": "yarn copy:views && yarn copy:types",
     "rebuild": "yarn clean && yarn build",
     "dbg": "DEBUG=http:* yarn dev",
     "start:prod": "yarn prod",
@@ -29,13 +29,7 @@
     "clean": "rm -rvf ./dist",
     "wipe": "yarn clean && rm -rvf ./node_modules",
     "copy:views": "cp -rv ./views ./dist/src/views",
-    "copy:public": "cp -rv ./public ./dist/src/public",
-    "copy:static": "cp -rv ./static ./dist/src/static",
-    "start-watch": "NODE_ENV=production nodemon dist/src/index.js --inspect=0.0.0.0:9229",
-    "start-wait-debugger": "NODE_ENV=production nodemon dist/src/index.js --inspect-brk=0.0.0.0:9229",
-    "test": "cross-env NODE_ENV=test PORT=8081 mocha --timeout 10000 --exit --inspect=0.0.0.0:9230",
-    "test-watch": "nodemon --exec \"yarn test\"",
-    "test-wait-debugger": "cross-env NODE_ENV=test PORT=8081 mocha --no-timeouts --exit --inspect-brk=0.0.0.0:9230"
+    "copy:types": "cp -rv ./src/index.d.ts ./dist/src/index.d.ts"
   },
   "devDependencies": {
     "@types/cookie-parser": "^1.4.6",
@@ -64,5 +58,9 @@
     "rimraf": "^5.0.5",
     "ts-add-js-extension": "^1.6.0",
     "tsc-alias": "^1.8.8"
-  }
+  },
+  "exports": {
+    ".": "./dist/src/index.js"
+  },
+  "types": "./dist/src/index.d.ts"
 }
