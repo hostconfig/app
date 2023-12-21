@@ -26,7 +26,7 @@
     "restart": "yarn rebuild && yarn prod",
     "dev": "NODE_ENV=development yarn serve",
     "prod": "NODE_ENV=production yarn serve",
-    "serve": "node ./dist/src/index.js",
+    "serve": "node ./dist/index.js",
     "clean": "rm -rvf ./dist",
     "wipe": "yarn clean && rm -rvf ./node_modules",
     "copy:views": "cp -rv ./views ./dist/views",
