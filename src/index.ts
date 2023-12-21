@@ -33,7 +33,7 @@ const __filename = new URL('', import.meta.url).pathname
 const __dirname = new URL('.', import.meta.url).pathname // Will contain trailing slash
 
 export const app = express()
-const debug = debugLib('http:server')
+const debug = debugLib('hostconfig:app')
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'))
