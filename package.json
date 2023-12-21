@@ -28,8 +28,8 @@
     "serve": "node ./dist/src/index.js",
     "clean": "rm -rvf ./dist",
     "wipe": "yarn clean && rm -rvf ./node_modules",
-    "copy:views": "cp -rv ./views ./dist/src/views",
-    "copy:types": "cp -rv ./src/index.d.ts ./dist/src/index.d.ts"
+    "copy:views": "cp -rv ./views ./dist/views",
+    "copy:types": "cp -rv ./src/index.d.ts ./dist/index.d.ts"
   },
   "devDependencies": {
     "@types/cookie-parser": "^1.4.6",
@@ -60,7 +60,7 @@
     "tsc-alias": "^1.8.8"
   },
   "exports": {
-    ".": "./dist/src/index.js"
+    ".": "./dist/index.js"
   },
-  "types": "./dist/src/index.d.ts"
+  "types": "./dist/index.d.ts"
 }
