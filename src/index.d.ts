@@ -1,5 +1,5 @@
 import core from 'express-serve-static-core'
 
-declare module '@hostconfig/app' {
+declare module '@hostconfig' {
   const app: core.Express
 }
