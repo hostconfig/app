@@ -4,7 +4,7 @@
  * Module dependencies.
  */
 
-import express, { Request, Response, NextFunction, Router } from 'express'
+import express, { Application, Request, Response, NextFunction, Router } from 'express'
 // this example uses express web framework so we know what longer build times
 // do and how Dockerfile layer ordering matters. If you mess up Dockerfile ordering
 // you'll see long build times on every code change + build. If done correctly,
@@ -32,7 +32,7 @@ type Routes = Route[]
 const __filename = new URL('', import.meta.url).pathname
 const __dirname = new URL('.', import.meta.url).pathname // Will contain trailing slash
 
-const app = express()
+const app: Application = express()
 export const debug = debugLib('hostconfig:app')
 
 // view engine setup

@@ -1,5 +1,7 @@
-import core from 'express-serve-static-core'
+import {
+  type Application
+} from 'express'
 
-declare module '@hostconfig' {
-  const app: core.Express
+declare module '@hostconfig/app' {
+  const app: Application
 }
