@@ -19,7 +19,7 @@
     "start": "node ./bin/www",
 
     "build": "tsc -p ./tsconfig.json && tsc-alias && ts-add-js-extension --dir=dist",
-    "postbuild": "yarn copy:views && yarn copy:types",
+    "postbuild": "yarn copy:views",
     "rebuild": "yarn clean && yarn build",
     "dbg": "DEBUG=http:* yarn dev",
     "start:prod": "yarn prod",
@@ -29,8 +29,8 @@
     "serve": "node ./dist/index.js",
     "clean": "rm -rvf ./dist",
     "wipe": "yarn clean && rm -rvf ./node_modules",
-    "copy:views": "cp -rv ./views ./dist/views",
-    "copy:types": "cp -rv ./src/index.d.ts ./dist/index.d.ts"
+    "copy:views": "cp -rv ./views ./dist/views"
+
   },
   "devDependencies": {
     "@types/cookie-parser": "^1.4.6",
