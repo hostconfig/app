@@ -11,10 +11,6 @@
     "url": "git+https://github.com/hostconfig/app.git"
   },
   "packageManager": "yarn@1.22.19",
-  "engines": {
-    "node": "~18.18.0"
-  },
-  "engineStrict" : false,
   "scripts": {
     "postinstall": "yarn build",
     "start": "node ./bin/www",
